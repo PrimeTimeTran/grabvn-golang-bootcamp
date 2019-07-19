@@ -27,6 +27,9 @@ func eval(text string) (value float64) {
 		value = a * b
 	case "/":
 		fmt.Println(a, op, b, "=", a/b)
+		if a == 0 {
+			panic("Can not divide to 0")
+		}
 		value = a / b
 	default:
 		fmt.Println("Invalid operator")
